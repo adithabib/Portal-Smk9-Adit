@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal RPL SMKN 9 Medan - Responsive Layout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="garis-neon" aria-hidden="true"></div>
+
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="brand-kiri">
+          <img src="smkn9-removebg-preview.png" alt="Logo SMKN 9 Medan" class="logo-img" />
+          <span class="logo-text">RPL SMKN 9 MEDAN</span>
+        </div>
+
+        <div class="header-kanan">
+          <nav class="nav-links">
+            <a href="#beranda" data-page="0" class="active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span>Beranda</span>
+            </a>
+
+            <a href="#kurikulum" data-page="1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span>Kurikulum</span>
+            </a>
+
+            <a href="#karya-siswa" data-page="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Karya Siswa</span>
+            </a>
+
+            <a href="#kontak" data-page="3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>Kontak</span>
+            </a>
+
+            <a href="#tentang-saya" data-page="4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>Tentang Saya</span>
+            </a>
+          </nav>
+
+          <img src="rpl-removebg-preview.png" alt="Logo Jurusan RPL" class="logo-img" />
+          <button class="hamburger-btn" aria-label="Menu">☰</button>
+        </div>
+      </header>
+
+      <!-- SIDEBAR KIRI -->
+      <aside class="sidebar-kiri">
+        <h3>Menu Cepat</h3>
+        <ul>
+          <li>Jadwal Praktikum</li>
+          <li>Modul Pemrograman Web</li>
+          <li>Daftar Lab RPL</li>
+          <li>Info PKL &amp; LSP</li>
+        </ul>
+      </aside>
+
+      <!-- KONTEN UTAMA -->
+      <main class="konten-utama">
+
+        <!-- BERANDA -->
+        <section class="slide aktif" id="beranda">
+          <h2>Berita &amp; Proyek Terbaru Kelas XII RPL</h2>
+
+          <div class="card-grid">
+            <a class="card" href="https://www.codashop.com/id-id/" target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn1.codashop.com/S/content/common/images/rebrand/og-image.png" alt="Inventaris QR" />
+              <h4>Aplikasi Inventaris QR</h4>
+              <p>Sistem peminjaman alat laboratorium berbasis web responsif dengan pemindai QR Code.</p>
+            </a>
+
+            <a class="card" href="https://indolat.com/" target="_blank" rel="noopener noreferrer">
+              <img src="https://ujian.or.id/assets/hero-cbt-mockup.webp" alt="CBT Online" />
+              <h4>Portal CBT Online</h4>
+              <p>Platform ujian berbasis komputer yang adaptif pada desktop lab maupun smartphone.</p>
+            </a>
+
+            <a class="card" href="https://example.com/e-katalog" target="_blank" rel="noopener noreferrer">
+              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="E-Katalog" />
+              <h4>E-Katalog Produk PKK</h4>
+              <p>Etalase digital karya kreatif siswa jurusan Rekayasa Perangkat Lunak.</p>
+            </a>
+
+            <a class="card" href="https://perpus.org/" target="_blank" rel="noopener noreferrer">
+              <img src="https://kubuku.id/download/perpusdasleman/img/freeze/iphone-freeze.png" alt="Perpustakaan Digital" />
+              <h4>Aplikasi Perpustakaan Digital</h4>
+              <p>Sistem peminjaman dan pengembalian buku berbasis website untuk mempermudah pengelolaan perpustakaan.</p>
+            </a>
+
+            <a class="card" href="https://smkn9medan.sch.id/" target="_blank" rel="noopener noreferrer">
+              <img src="https://file.data.kemendikdasmen.go.id/sekolahkita/10/1021/10210766-10.jpg" alt="Profil Sekolah" />
+              <h4>Website Profil Sekolah</h4>
+              <p>Website informasi sekolah yang menampilkan profil, kegiatan, fasilitas, informasi akademik dan prestasi.</p>
+            </a>
+
+            <a class="card" href="https://majoo.id/aplikasi-kasir-online" target="_blank" rel="noopener noreferrer">
+              <img src="https://portal-gcs-cdn.majoo.id/v2/vt/vt-retina-kasir-online.jpg" alt="Kasir Digital" />
+              <h4>Aplikasi Kasir Digital</h4>
+              <p>Sistem transaksi penjualan berbasis web untuk membantu pengelolaan barang dan laporan penjualan.</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- KURIKULUM -->
+        <section class="slide" id="kurikulum">
+          <h2>Kurikulum RPL</h2>
+          <p class="slide-teks">
+            Mata pelajaran produktif yang dipelajari di jurusan Rekayasa Perangkat Lunak.
+          </p>
+          <ul class="daftar">
+            <li>Pemrograman Web dan Perangkat Bergerak</li>
+            <li>Pemrograman Berorientasi Objek</li>
+            <li>Basis Data</li>
+            <li>Produk Kreatif dan Kewirausahaan (PKK)</li>
+          </ul>
+        </section>
+
+        <!-- KARYA SISWA -->
+        <section class="slide" id="karya-siswa">
+          <h2>Karya Siswa</h2>
+          <p class="slide-teks">Kumpulan proyek terbaik siswa RPL.</p>
+        </section>
+
+        <!-- KONTAK -->
+        <section class="slide" id="kontak">
+          <h2>Kontak</h2>
+          <p class="slide-teks">SMK Negeri 9 Medan, Jurusan RPL</p>
+          <p class="slide-teks">Email: smkn09medan@gmail.com</p>
+        </section>
+
+        <!-- TENTANG SAYA -->
+        <section class="slide" id="tentang-saya">
+          <h2>Tentang Saya</h2>
+
+          <div class="profil">
+            <div class="profil-foto">
+              <span>👤</span>
+              <img src="foto-saya.jpg" alt="Foto saya" onerror="this.style.display='none'" />
+            </div>
+
+            <div class="profil-info">
+              <h3>Aditya Habib</h3>
+              <p class="profil-peran">XII RPL-2 · SMK Negeri 9 Medan</p>
+              <p class="profil-bio">
+                Halo, salam kenal, saya Adit siswa dari SMKN9 Medan Jurusan RPL
+              </p>
+            </div>
+          </div>
+
+          <h3 class="sub-judul">Hubungi &amp; Ikuti Saya</h3>
+
+          <div class="kontak-grid">
+            <a class="kontak-item" href="https://wa.me/6282277692771" target="_blank" rel="noopener noreferrer">
+              <span class="ikon">💬</span>
+              <span><strong>WhatsApp</strong><small>082277692771</small></span>
+            </a>
+
+            <a class="kontak-item" href="mailto:adithabib01@gmail.com">
+              <span class="ikon">✉️</span>
+              <span><strong>Email</strong><small>adithabib01@gmail.com</small></span>
+            </a>
+
+            <a class="kontak-item" href="https://instagram.com/ditzz_h" target="_blank" rel="noopener noreferrer">
+              <span class="ikon">📸</span>
+              <span><strong>Instagram</strong><small>ditzz_h</small></span>
+            </a>
+
+            <a class="kontak-item" href="https://github.com/adithabib" target="_blank" rel="noopener noreferrer">
+              <span class="ikon">💻</span>
+              <span><strong>GitHub</strong><small>github.com/adithabib</small></span>
+            </a>
+
+            <a class="kontak-item" href="https://tiktok.com/@kuroow1" target="_blank" rel="noopener noreferrer">
+              <span class="ikon">🎵</span>
+              <span><strong>TikTok</strong><small>kuroow1</small></span>
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- WIDGET PROMO KANAN -->
+      <aside class="widget-promo">
+        <h3>Info &amp; Promo Lab</h3>
+        <div class="promo-box">
+          <strong>Uji Kompetensi LSP!</strong>
+          <p>Persiapkan portofolio web responsif kalian sebelum jadwal asesmen.</p>
+        </div>
+      </aside>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <p>
+          &copy; 2026 Jurusan RPL SMK Negeri 9 Medan – Modul Pemrograman Web Lanjut
+        </p>
+      </footer>
+    </div>
+
+    <!-- CHATBOT -->
+    <button class="chat-fab" id="chatFab" type="button" aria-label="Buka chatbot">💬</button>
+
+    <section class="chat-panel" id="chatPanel" aria-hidden="true">
+      <header class="chat-head">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-judul">
+          <strong>Asisten RPL</strong>
+          <small>SMK Negeri 9 Medan</small>
+        </div>
+        <button type="button" id="chatClose" aria-label="Tutup chatbot">✕</button>
+      </header>
+
+      <div class="chat-body" id="chatBody" aria-live="polite"></div>
+
+      <div class="chat-menu">
+        <p class="chat-menu-judul">Pilih pertanyaan:</p>
+        <div class="chat-menu-list" id="chatMenuList"></div>
+      </div>
+    </section>
+
+    <!-- SCRIPT 1: NAVIGASI HALAMAN -->
+    <script>
+      const pages = ["beranda", "kurikulum", "karya-siswa", "kontak", "tentang-saya"];
+      const slides = document.querySelectorAll(".slide");
+      const links = document.querySelectorAll(".nav-links a");
+      const hamburger = document.querySelector(".hamburger-btn");
+      const garis = document.querySelector(".garis-neon");
+      const root = document.documentElement;
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const dukung = typeof document.startViewTransition === "function";
+
+      let current = -1;
+      let sibuk = false;
+
+      function ganti(index) {
+        slides.forEach((s, i) => s.classList.toggle("aktif", i === index));
+        links.forEach((a, i) => a.classList.toggle("active", i === index));
+        history.replaceState(null, "", "#" + pages[index]);
+        document.body.classList.remove("menu-open");
+        current = index;
+      }
+
+      // Isi halaman muncul berurutan dari bawah
+      function stagger(slide) {
+        const items = slide.querySelectorAll("h2, .slide-teks, .daftar li, .card, .profil, .sub-judul, .kontak-item");
+        items.forEach((el, i) => {
+          el.animate(
+            [
+              { opacity: 0, transform: "translateY(40px) scale(0.96)", filter: "blur(8px)" },
+              { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+            ],
+            {
+              duration: 700,
+              delay: 350 + i * 90,
+              easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+              fill: "backwards",
+            }
+          );
+        });
+      }
+
+      function goTo(index) {
+        if (sibuk || index === current) return;
+
+        if (current === -1 || reduceMotion || !dukung) {
+          ganti(index);
+          window.scrollTo(0, 0);
+          if (!reduceMotion) stagger(slides[index]);
+          return;
+        }
+
+        sibuk = true;
+
+        // Sudut garis neon sejajar dengan tepi potongan
+        const s = parseFloat(getComputedStyle(root).getPropertyValue("--s")) || 320;
+        const sudut = -Math.atan(s / window.innerHeight) * (180 / Math.PI);
+        root.style.setProperty("--sudut", sudut + "deg");
+        garis.classList.add("aktif");
+
+        const transisi = document.startViewTransition(() => {
+          ganti(index);
+          window.scrollTo(0, 0);
+        });
+
+        transisi.ready.then(() => stagger(slides[index])).catch(() => {});
+
+        transisi.finished.finally(() => {
+          garis.classList.remove("aktif");
+          sibuk = false;
+        });
+      }
+
+      links.forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          goTo(Number(a.dataset.page));
+        });
+      });
+
+      hamburger.addEventListener("click", () => {
+        const open = document.body.classList.toggle("menu-open");
+        hamburger.setAttribute("aria-expanded", open);
+      });
+
+      // Buka halaman sesuai #hash saat dimuat
+      const awal = pages.indexOf(location.hash.replace("#", ""));
+      goTo(awal === -1 ? 0 : awal);
+    </script>
+
+    <!-- SCRIPT 2: CHATBOT -->
+    <script>
+      const SEKOLAH = {
+        nama: "SMK Negeri 9 Medan",
+        alamat: "Jl. Patriot No. 20 A, Kelurahan Lalang, Kecamatan Medan Sunggal, Kota Medan, Sumatera Utara",
+        telepon: "(061) 8454350",
+        email: "smkn09medan@gmail.com",
+        website: "https://smkn9medan.sch.id/",
+        profil: "VISI : Menghasilkan Sumber Daya Manusia bermartabat yang yang pancasilais, berjiwa entrepreneur serta mampu bersaing di Era Industri 5.0, MISI : Menanamkan dan meningkatkan nilai-nilai keimanan dan ketaqwaaan terhadap Tuhan yang Maha Esa sesuai profile pelajar pancasila, Memfasilitasi kreatifitas peserta didik melalui kegiatan pembiasaan kewirausahaan pengembangan diri yang terencana dan berkesinambungan, Mengembangkan kurikulum berbasis HOST, PBL dan teaching factory sesuai kebutuhan dunia kerja dan revolusi industri 5.0, Melaksanakan uji kompetensi profesi sesuai standar SKKNI, Melaksanakan kerja sama yang harmonis dengan masyarakat dan dunia kerja dalam rangka pemasaran tamatan.",
+        jurusan: [
+          "Rekayasa Perangkat Lunak (RPL)",
+          "Desain Komunikasi Visual (DKV)",
+          "Animasi",
+          "Pekerja Sosial (PEKSOS)",
+          "Produksi dan Siaran Program Televisi (PSPT)",
+          "Teknik Komputer dan Jaringan (TKJ)",
+        ],
+      };
+
+      const MAPEL_RPL = [
+        "Pemrograman Web dan Perangkat Bergerak",
+        "Pemrograman Berorientasi Objek",
+        "Basis Data",
+        "Produk Kreatif dan Kewirausahaan (PKK)",
+      ];
+
+      const GURU = [
+        "Pak Ardiansyah",
+        "Pak Roy",
+        "Pak Novelman",
+        "Pak Gultom",
+        "Pak Herbet",
+        "Bu Gira",
+        "Bu Shenty",
+        "Bu Sinta",
+        "Bu Annisa",
+      ];
+
+      const PERTANYAAN = [
+        {
+          tanya: "🏫 Apa profil dan visi misi sekolah?",
+          jawab: () => SEKOLAH.nama + "\n\n" + SEKOLAH.profil,
+        },
+        {
+          tanya: "🎓 Jurusan apa saja yang ada?",
+          jawab: () =>
+            "Jurusan di " + SEKOLAH.nama + ":\n" +
+            SEKOLAH.jurusan.map((j) => "• " + j).join("\n"),
+        },
+        {
+          tanya: "💻 Apa itu jurusan RPL?",
+          jawab: () =>
+            "Rekayasa Perangkat Lunak (RPL) mempelajari pembuatan aplikasi: web, aplikasi bergerak, dan basis data.",
+        },
+        {
+          tanya: "📚 Mata pelajaran produktif RPL?",
+          jawab: () => "Mata pelajaran produktif RPL:\n" + MAPEL_RPL.map((m) => "• " + m).join("\n"),
+        },
+        {
+          tanya: "👨‍🏫 Siapa guru produktif RPL?",
+          jawab: () => "Guru produktif RPL:\n" + GURU.map((g) => "• " + g).join("\n"),
+        },
+        {
+          tanya: "📍 Di mana alamat sekolah?",
+          jawab: () => "Alamat " + SEKOLAH.nama + ":\n" + SEKOLAH.alamat,
+        },
+        {
+          tanya: "📞 Bagaimana cara menghubungi sekolah?",
+          jawab: () =>
+            "Kontak " + SEKOLAH.nama + ":\n• Telepon: " + SEKOLAH.telepon +
+            "\n• Email: " + SEKOLAH.email + "\n• Website: " + SEKOLAH.website,
+        },
+      ];
+
+      const fab = document.getElementById("chatFab");
+      const panel = document.getElementById("chatPanel");
+      const tutupBtn = document.getElementById("chatClose");
+      const body = document.getElementById("chatBody");
+      const menuList = document.getElementById("chatMenuList");
+
+      let menunggu = false;
+
+      function tambah(teks, siapa) {
+        const el = document.createElement("div");
+        el.className = "pesan " + siapa;
+        el.textContent = teks;
+        body.appendChild(el);
+        body.scrollTop = body.scrollHeight;
+      }
+
+      function aturTombol(aktif) {
+        menuList.querySelectorAll("button").forEach((b) => (b.disabled = !aktif));
+      }
+
+      function pilih(item) {
+        if (menunggu) return;
+        menunggu = true;
+        aturTombol(false);
+
+        tambah(item.tanya.replace(/^\S+\s/, ""), "user");
+
+        const ketik = document.createElement("div");
+        ketik.className = "pesan bot mengetik";
+        ketik.innerHTML = "<i></i><i></i><i></i>";
+        body.appendChild(ketik);
+        body.scrollTop = body.scrollHeight;
+
+        setTimeout(() => {
+          ketik.remove();
+          tambah(item.jawab(), "bot");
+          menunggu = false;
+          aturTombol(true);
+        }, 500 + Math.random() * 300);
+      }
+
+      PERTANYAAN.forEach((item) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.textContent = item.tanya;
+        b.addEventListener("click", () => pilih(item));
+        menuList.appendChild(b);
+      });
+
+      function buka(status) {
+        panel.classList.toggle("buka", status);
+        panel.setAttribute("aria-hidden", !status);
+        fab.textContent = status ? "✕" : "💬";
+        if (status && !body.children.length) {
+          tambah("Halo! Saya asisten " + SEKOLAH.nama + ". Silakan pilih pertanyaan di bawah ini.", "bot");
+        }
+      }
+
+      fab.addEventListener("click", () => buka(!panel.classList.contains("buka")));
+      tutupBtn.addEventListener("click", () => buka(false));
+    </script>
+  </body>
+</html>
