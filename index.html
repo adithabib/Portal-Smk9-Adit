@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="garis-neon" aria-hidden="true"></div>
 
     <div class="page-wrapper">
       <header class="header">
@@ -239,93 +238,83 @@
 
     <!-- SCRIPT 1: NAVIGASI HALAMAN -->
     <script>
-      const pages = ["beranda", "kurikulum", "karya-siswa", "kontak", "tentang-saya"];
-      const slides = document.querySelectorAll(".slide");
-      const links = document.querySelectorAll(".nav-links a");
-      const hamburger = document.querySelector(".hamburger-btn");
-      const garis = document.querySelector(".garis-neon");
-      const root = document.documentElement;
+  const pages = ["beranda", "kurikulum", "karya-siswa", "kontak", "tentang-saya"];
+  const slides = document.querySelectorAll(".slide");
+  const links = document.querySelectorAll(".nav-links a");
+  const hamburger = document.querySelector(".hamburger-btn");
 
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const dukung = typeof document.startViewTransition === "function";
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const dukung = typeof document.startViewTransition === "function";
 
-      let current = -1;
-      let sibuk = false;
+  let current = -1;
+  let sibuk = false;
 
-      function ganti(index) {
-        slides.forEach((s, i) => s.classList.toggle("aktif", i === index));
-        links.forEach((a, i) => a.classList.toggle("active", i === index));
-        history.replaceState(null, "", "#" + pages[index]);
-        document.body.classList.remove("menu-open");
-        current = index;
-      }
+  function ganti(index) {
+    slides.forEach((s, i) => s.classList.toggle("aktif", i === index));
+    links.forEach((a, i) => a.classList.toggle("active", i === index));
+    history.replaceState(null, "", "#" + pages[index]);
+    document.body.classList.remove("menu-open");
+    current = index;
+  }
 
-      // Isi halaman muncul berurutan dari bawah
-      function stagger(slide) {
-        const items = slide.querySelectorAll("h2, .slide-teks, .daftar li, .card, .profil, .sub-judul, .kontak-item");
-        items.forEach((el, i) => {
-          el.animate(
-            [
-              { opacity: 0, transform: "translateY(40px) scale(0.96)", filter: "blur(8px)" },
-              { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
-            ],
-            {
-              duration: 700,
-              delay: 350 + i * 90,
-              easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-              fill: "backwards",
-            }
-          );
-        });
-      }
-
-      function goTo(index) {
-        if (sibuk || index === current) return;
-
-        if (current === -1 || reduceMotion || !dukung) {
-          ganti(index);
-          window.scrollTo(0, 0);
-          if (!reduceMotion) stagger(slides[index]);
-          return;
+  // Isi halaman muncul halus berurutan
+  function stagger(slide) {
+    const items = slide.querySelectorAll("h2, .slide-teks, .daftar li, .card, .profil, .sub-judul, .kontak-item");
+    items.forEach((el, i) => {
+      el.animate(
+        [
+          { opacity: 0, transform: "translateY(16px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        {
+          duration: 500,
+          delay: 250 + i * 60,
+          easing: "ease-out",
+          fill: "backwards",
         }
+      );
+    });
+  }
 
-        sibuk = true;
+  function goTo(index) {
+    if (sibuk || index === current) return;
 
-        // Sudut garis neon sejajar dengan tepi potongan
-        const s = parseFloat(getComputedStyle(root).getPropertyValue("--s")) || 320;
-        const sudut = -Math.atan(s / window.innerHeight) * (180 / Math.PI);
-        root.style.setProperty("--sudut", sudut + "deg");
-        garis.classList.add("aktif");
+    if (current === -1 || reduceMotion || !dukung) {
+      ganti(index);
+      window.scrollTo(0, 0);
+      if (!reduceMotion) stagger(slides[index]);
+      return;
+    }
 
-        const transisi = document.startViewTransition(() => {
-          ganti(index);
-          window.scrollTo(0, 0);
-        });
+    sibuk = true;
 
-        transisi.ready.then(() => stagger(slides[index])).catch(() => {});
+    const transisi = document.startViewTransition(() => {
+      ganti(index);
+      window.scrollTo(0, 0);
+    });
 
-        transisi.finished.finally(() => {
-          garis.classList.remove("aktif");
-          sibuk = false;
-        });
-      }
+    transisi.ready.then(() => stagger(slides[index])).catch(() => {});
+    transisi.finished.finally(() => {
+      sibuk = false;
+    });
+  }
 
-      links.forEach((a) => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          goTo(Number(a.dataset.page));
-        });
-      });
+  links.forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      goTo(Number(a.dataset.page));
+    });
+  });
 
-      hamburger.addEventListener("click", () => {
-        const open = document.body.classList.toggle("menu-open");
-        hamburger.setAttribute("aria-expanded", open);
-      });
+  hamburger.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    hamburger.setAttribute("aria-expanded", open);
+  });
 
-      // Buka halaman sesuai #hash saat dimuat
-      const awal = pages.indexOf(location.hash.replace("#", ""));
-      goTo(awal === -1 ? 0 : awal);
-    </script>
+  // Buka halaman sesuai #hash saat dimuat
+  const awal = pages.indexOf(location.hash.replace("#", ""));
+  goTo(awal === -1 ? 0 : awal);
+</script>
 
     <!-- SCRIPT 2: CHATBOT -->
     <script>
