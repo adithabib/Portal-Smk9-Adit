@@ -412,118 +412,33 @@ body {
   }
 }
 
-/* ==========================================================
-   TRANSISI HALAMAN: SAPUAN DIAGONAL NEON
-   ========================================================== */
-:root {
-  --s: 320px;
-}
-
+/* TRANSISI HALAMAN: MENYAMPUR (CROSSFADE) */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation: none;
   mix-blend-mode: normal;
 }
 
 ::view-transition-old(root) {
-  animation: lamaKeluar 1s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: lamaBlur 0.7s ease both;
 }
 
 ::view-transition-new(root) {
   z-index: 2;
-  animation: baruMasuk 1s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: baruJelas 0.7s ease both;
 }
 
-@keyframes lamaKeluar {
+@keyframes lamaBlur {
   to {
-    transform: scale(0.94) translateX(-3%);
-    filter: brightness(0.35) blur(6px);
+    filter: blur(6px);
+    transform: scale(0.98);
   }
 }
 
-@keyframes baruMasuk {
+@keyframes baruJelas {
   from {
-    clip-path: polygon(
-      calc(var(--s) * -1) 0,
-      0px 0,
-      calc(var(--s) * -1) 100%,
-      calc(var(--s) * -1) 100%
-    );
-  }
-  to {
-    clip-path: polygon(
-      calc(var(--s) * -1) 0,
-      calc(100% + var(--s)) 0,
-      100% 100%,
-      calc(var(--s) * -1) 100%
-    );
-  }
-}
-
-.garis-neon {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100vh;
-  background: linear-gradient(180deg, #38bdf8, #818cf8, #34d399);
-  box-shadow: 0 0 18px 6px rgba(56, 189, 248, 0.75),
-    0 0 60px 18px rgba(99, 102, 241, 0.45);
-  pointer-events: none;
-  view-transition-name: garis;
-}
-
-.garis-neon.aktif {
-  display: block;
-}
-
-::view-transition-old(garis) {
-  display: none;
-}
-
-::view-transition-new(garis) {
-  animation: none;
-}
-
-::view-transition-group(garis) {
-  z-index: 3;
-  transform-origin: 0 0;
-  animation: garisGerak 1s cubic-bezier(0.76, 0, 0.24, 1) both;
-}
-
-@keyframes garisGerak {
-  from {
-    transform: translateX(0) skewX(var(--sudut, -20deg));
-  }
-  to {
-    transform: translateX(calc(100vw + var(--s))) skewX(var(--sudut, -20deg));
-  }
-}
-
-/* Latar aurora */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -20%;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(40% 40% at 20% 20%, rgba(56, 189, 248, 0.18), transparent 70%),
-    radial-gradient(35% 35% at 80% 30%, rgba(99, 102, 241, 0.16), transparent 70%),
-    radial-gradient(40% 40% at 50% 85%, rgba(16, 185, 129, 0.12), transparent 70%);
-  animation: aurora 18s ease-in-out infinite alternate;
-}
-
-@keyframes aurora {
-  to {
-    transform: translate3d(4%, -3%, 0) scale(1.1) rotate(4deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
+    opacity: 0;
+    filter: blur(6px);
+    transform: scale(1.02);
   }
 }
 
