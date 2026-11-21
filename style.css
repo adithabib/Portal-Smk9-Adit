@@ -1,4 +1,4 @@
-/* RESET & GAYA DASAR (DESKTOP / SMART TV >= 1024px) */
+/* RESET & GAYA DASAR */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,15 +6,9 @@
 }
 
 @keyframes rgbFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 body {
@@ -159,7 +153,7 @@ body {
   padding-left: 5px;
 }
 
-/* KONTEN UTAMA DENGAN GARIS RGB HALUS */
+/* KONTEN UTAMA */
 .konten-utama {
   grid-area: main;
   background: #162032;
@@ -296,123 +290,7 @@ body {
   border: 1px solid rgba(139, 92, 246, 0.35);
 }
 
-/* BREAKPOINT 1: TABLET (601px s.d. 1023px) */
-@media screen and (min-width: 601px) and (max-width: 1023px) {
-  .page-wrapper {
-    grid-template-columns: 190px 1fr;
-    grid-template-areas:
-      "header header"
-      "sidebar main"
-      "footer footer";
-  }
-
-  .widget-promo {
-    display: none;
-  }
-
-  .card-grid,
-  .kontak-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a {
-    font-size: 0.9rem;
-    gap: 5px;
-  }
-
-  .nav-links a svg {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-/* BREAKPOINT 2: SMARTPHONE (<= 600px) */
-@media screen and (max-width: 600px) {
-  .page-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    padding: 10px;
-  }
-
-  .nav-links,
-  .sidebar-kiri,
-  .widget-promo {
-    display: none;
-  }
-
-  .hamburger-btn {
-    display: block;
-  }
-
-  .card-grid,
-  .kontak-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header {
-    position: relative;
-    padding: 10px 12px;
-  }
-
-  .brand-kiri {
-    gap: 8px;
-  }
-
-  .logo-img {
-    height: 32px;
-  }
-
-  .logo-text {
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
-
-  .header-kanan {
-    gap: 8px;
-  }
-
-  .footer {
-    padding: 14px 14px 80px;
-  }
-
-  /* Menu hamburger terbuka */
-  .menu-open .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 6px;
-    background: #1e293b;
-    padding: 14px 18px;
-    border-radius: 10px;
-    border: 1px solid rgba(56, 189, 248, 0.45);
-    z-index: 10;
-  }
-}
-
-/* BREAKPOINT 3: HP MODE MIRING */
-@media (max-width: 850px) and (orientation: landscape) {
-  .header {
-    border-color: rgba(52, 211, 153, 0.5);
-  }
-}
-
-/* BREAKPOINT 4: SMART TV / MONITOR 4K */
-@media (min-width: 1921px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-/* TRANSISI HALAMAN: MENYAMPUR (CROSSFADE) */
+/* TRANSISI HALAMAN: MENYAMPUR */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   mix-blend-mode: normal;
@@ -442,9 +320,7 @@ body {
   }
 }
 
-/* ==========================================================
-   HALAMAN TENTANG SAYA
-   ========================================================== */
+/* HALAMAN TENTANG SAYA */
 .profil {
   display: flex;
   gap: 24px;
@@ -508,7 +384,7 @@ body {
 
 .kontak-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -516,6 +392,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  min-width: 0;
   padding: 14px 16px;
   border-radius: 12px;
   text-decoration: none;
@@ -547,6 +424,10 @@ body {
   background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(99, 102, 241, 0.35));
 }
 
+.kontak-item > span:last-child {
+  min-width: 0;
+}
+
 .kontak-item strong {
   display: block;
   color: #f1f5f9;
@@ -559,16 +440,7 @@ body {
   overflow-wrap: anywhere;
 }
 
-@media screen and (max-width: 600px) {
-  .profil {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* ==========================================================
-   CHATBOT
-   ========================================================== */
+/* CHATBOT */
 .chat-fab {
   position: fixed;
   right: 20px;
@@ -764,11 +636,197 @@ body {
   cursor: wait;
 }
 
+/* ==========================================================
+   RESPONSIF (semua @media ada di sini, di paling bawah)
+   ========================================================== */
+
+/* Tablet (601px - 1023px) */
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .page-wrapper {
+    grid-template-columns: 190px 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+
+  .widget-promo {
+    display: none;
+  }
+
+  .card-grid,
+  .kontak-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    gap: 5px;
+  }
+
+  .nav-links a svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .profil {
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .profil-foto {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
+
+  .profil-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .kontak-item {
+    padding: 12px 14px;
+  }
+}
+
+/* HP (<= 600px) */
 @media screen and (max-width: 600px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    padding: 10px;
+  }
+
+  .nav-links,
+  .sidebar-kiri,
+  .widget-promo {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .card-grid,
+  .kontak-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: relative;
+    padding: 10px 12px;
+  }
+
+  .brand-kiri {
+    gap: 8px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .header-kanan {
+    gap: 8px;
+  }
+
+  .footer {
+    padding: 14px 14px 80px;
+  }
+
+  /* Menu hamburger terbuka */
+  .menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+    background: #1e293b;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    z-index: 10;
+  }
+
+  /* Tentang Saya */
+  .profil {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    padding: 18px 14px;
+  }
+
+  .profil-foto {
+    width: 110px;
+    height: 110px;
+    font-size: 2.8rem;
+  }
+
+  .profil-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .profil-bio {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .sub-judul {
+    margin: 22px 0 12px;
+    text-align: center;
+  }
+
+  .kontak-grid {
+    gap: 10px;
+  }
+
+  .kontak-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .kontak-item .ikon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  /* Chatbot */
   .chat-panel {
     right: 10px;
     left: 10px;
     width: auto;
     bottom: 84px;
+  }
+}
+
+/* HP kecil (<= 380px) */
+@media screen and (max-width: 380px) {
+  .profil-foto {
+    width: 96px;
+    height: 96px;
+  }
+
+  .kontak-item small {
+    font-size: 0.78rem;
+  }
+}
+
+/* Smart TV / monitor 4K */
+@media (min-width: 1921px) {
+  html {
+    font-size: 20px;
   }
 }
